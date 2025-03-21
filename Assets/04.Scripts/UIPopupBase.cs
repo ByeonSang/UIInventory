@@ -4,5 +4,16 @@ using UnityEngine;
 
 public class UIPopupBase : MonoBehaviour
 {
+    protected bool isEnable = false;
 
+    public void SwitchOn()
+    {
+        isEnable = !isEnable;
+        gameObject.SetActive(isEnable);
+    }
+
+    public void SetActive(bool trigger)
+    {
+        gameObject.SetActive(trigger);
+    }
 }

@@ -21,28 +21,11 @@ public class ResourceManager : Singleton<ResourceManager>
         if(obj is T)
         {
             T result = obj as T;
-            original.Add(key, result);
+            original[key] = result;
             return result;
         }
 
         Debug.LogWarning($"not found {path}");
         return null;
-    }
-
-    public T GetResource<T>(string key) where T : UnityEngine.Object
-    {
-        if(original.TryGetValue(key, out var value))
-        {
-            if (value is T)
-                return value as T;
-        }
-
-        Debug.LogError($"not found Resource {key}");
-        return null;
-    }
-
-    private void Awake()
-    {
-        LoadResource<GameObject>(Enum.GetName(typeof(Enums.POPUPTYPE), Enums.POPUPTYPE.INVENTORY), "Popup\\UIInventory");
     }
 }

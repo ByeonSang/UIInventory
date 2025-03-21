@@ -7,14 +7,12 @@ using UnityEngine.Rendering;
 
 public class UIManager : Singleton<UIManager>
 {
-    private const string Inventory = "UIInventory";
-
     // 새로 만들어진 객체를 저장할 수 있는 딕셔너리
-    Dictionary<Enums.POPUPTYPE, UIPopupBase> popupDict = new();
+    Dictionary<string, UIPopupBase> popupDict = new();
 
-    public T CreatePopup<T>(Enums.POPUPTYPE type) where T : UIPopupBase
+    public T ShowPopup<T>() where T : UIPopupBase
     {
-        if(popupDict.TryGetValue(type, out var value))
+        if(popupDict.TryGetValue(typeof(T).Name, out var value))
         {
             return value as T;
         }
@@ -22,31 +20,22 @@ public class UIManager : Singleton<UIManager>
         // 원본 프리펩을 가져와야한다.
         // 새로 생성하고, 딕셔너리에 저장
 
-        GameObject prefab = ResourceManager.Instance.GetResource<GameObject>(Enum.GetName(typeof(Enums.POPUPTYPE), type));
+        string name = typeof(T).Name;
+        string path = $"Popup\\{name}";
+
+        GameObject prefab = ResourceManager.Instance.LoadResource<GameObject>(name, path);
         GameObject go = Instantiate(prefab);
 
         if(go.TryGetComponent(out T popupScript))
         {
-            popupDict.Add(type, popupScript);
+            popupDict[typeof(T).Name] =  popupScript;
 
             return popupScript;
         }
         else
         {
-            Debug.Log($"didn't make {Enum.GetName(typeof(Enums.POPUPTYPE), type)} object");
+            Debug.Log($"didn't make {typeof(T).Name} object");
             return null;
         }
-    }
-
-    public T GetPopupUI<T>(Enums.POPUPTYPE type) where T : UIPopupBase
-    {
-        if(popupDict.TryGetValue(type, out var popupScript))
-        {
-            if (popupScript is T)
-                return popupScript as T;
-        }
-
-        // 없으면 새로 만들어준다
-        return CreatePopup<T>(type);
     }
 }
