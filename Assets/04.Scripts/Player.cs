@@ -28,6 +28,12 @@ public class Player : MonoBehaviour
 
     // --------------------------------------------
 
+    // Player Equipmanet ----------------
+
+    public ItemData CurrentWeapon { get; set; }
+
+    // ----------------------------------
+
     private void Awake()
     {
         Inventory = new();

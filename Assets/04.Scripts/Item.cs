@@ -37,8 +37,11 @@ public class Item : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            GameManager.Instance.PlayerController.Inventory.Add(itemData);
-            Destroy(this.gameObject);
+            if(UIManager.Instance.ShowPopup<UIInventory>().AddItem(itemData))
+            {
+                GameManager.Instance.PlayerController.Inventory.Add(itemData);
+                Destroy(this.gameObject);
+            }
         }
     }
 }
