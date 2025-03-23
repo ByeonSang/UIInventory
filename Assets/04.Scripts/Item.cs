@@ -12,20 +12,18 @@ public class Item : MonoBehaviour
     private SpriteRenderer spr;
     private BoxCollider2D boxCol;
 
-    private void OnValidate()
-    {
-        if(itemData != null)
-            transform.name = $"Item_{itemData.name}";
-    }
 
     private void Awake()
     {
         spr = GetComponent<SpriteRenderer>();
         boxCol = GetComponent<BoxCollider2D>();
+        gameObject.SetActive(false);
     }
 
-    private void Start()
+    // 오브젝트 풀 사용하는 오브젝은 시작을 OnEnable로 설정
+    private void OnEnable()
     {
+        transform.name = $"Item_{itemData.name}";
         spr.sprite = itemData.Image;
         boxCol.isTrigger = true;
 
@@ -40,7 +38,7 @@ public class Item : MonoBehaviour
             if(UIManager.Instance.ShowPopup<UIInventory>().AddItem(itemData))
             {
                 GameManager.Instance.PlayerController.Inventory.Add(itemData);
-                Destroy(this.gameObject);
+                ObjectPoolManager.Instance.ReturnObject<ItemFactory>(this.gameObject);
             }
         }
     }

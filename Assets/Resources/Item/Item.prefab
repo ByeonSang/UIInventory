@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5432855597364497867}
   - component: {fileID: 3148975868845118296}
   m_Layer: 0
-  m_Name: Item_WoodSword
+  m_Name: Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e93f3256cff25ea4f8685443ea06e66c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemData: {fileID: 11400000, guid: ac439a0327749bf4abe45c66b7413e9a, type: 2}
+  itemData: {fileID: 11400000, guid: 46776ac6fe7126c49ad1fb7b661ba47f, type: 2}
 --- !u!61 &3148975868845118296
 BoxCollider2D:
   m_ObjectHideFlags: 0

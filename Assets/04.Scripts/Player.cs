@@ -36,7 +36,6 @@ public class Player : MonoBehaviour
     public Action<Status, Status> StatusUpdate;
 
     [SerializeField] private float moveSpeed;
-    private Rigidbody2D rigid;
     private Vector2 direction;
 
     // 간단한 구조 -------------------------------
@@ -70,8 +69,6 @@ public class Player : MonoBehaviour
 
     private IEnumerator Start()
     {
-        rigid = GetComponent<Rigidbody2D>();
-
         yield return (new WaitUntil(() => StatusUpdate != null));
 
         // 초기화
@@ -89,6 +86,13 @@ public class Player : MonoBehaviour
         Vector2 moveToward = (Vector2)transform.position + direction * moveSpeed;
 
         transform.position = Vector3.Lerp(transform.position, moveToward, Time.deltaTime);
+
+
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            GameObject item = ObjectPoolManager.Instance.GetObject<ItemFactory>(typeof(ItemFactory).Name);
+            item.transform.position = new Vector3(2f, 0f);
+        }
     }
 
     public void SetStatus(ItemData data, bool unEquip)
