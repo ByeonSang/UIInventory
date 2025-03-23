@@ -5,6 +5,12 @@ using UnityEngine;
 
 public static class Enums
 {
+    public enum EquipType
+    {
+        Weapon,
+        Armor
+    }
+
     public enum POPUPTYPE
     {
         INVENTORY,
