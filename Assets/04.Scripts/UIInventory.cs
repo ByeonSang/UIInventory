@@ -106,7 +106,7 @@ public class UIInventory : UIPopupBase
     public void Equip<T>(UISlot currentSlot) where T : EquipData
     {
         Player player = GameManager.Instance.PlayerController;
-        EquipState curEquip = player.equipState;
+        EquipState curEquip = player.PlayerEquipState;
 
 
 

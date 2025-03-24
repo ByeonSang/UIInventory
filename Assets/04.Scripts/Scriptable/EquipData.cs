@@ -6,7 +6,7 @@ using System;
 
 public class EquipData : ScriptableObject
 {
-    public Utils.EquipType type;
+    public Enums.EquipType type;
     public string ItemName;
     public Sprite Image;
 

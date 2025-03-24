@@ -10,10 +10,4 @@ public static class Enums
         Weapon,
         Armor
     }
-
-    public enum POPUPTYPE
-    {
-        INVENTORY,
-        STATUS,
-    }
 }

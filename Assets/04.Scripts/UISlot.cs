@@ -74,10 +74,10 @@ public class UISlot : MonoBehaviour
         {
             switch (itemData.type)
             {
-                case Utils.EquipType.Weapon:
+                case Enums.EquipType.Weapon:
                     inventory.Equip<WeaponData>(this);
                     break;
-                case Utils.EquipType.Armor:
+                case Enums.EquipType.Armor:
                     inventory.Equip<ArmorData>(this);
                     break;
             }
