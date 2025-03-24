@@ -1,14 +1,14 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectPoolManager : Singleton<ObjectPoolManager>
 {
-    // °ÔÀÓ¿ÀºêÁ§Æ®¸¦ ÀúÀåÇÒ ¼ö ÀÖ°Ô ÀúÀåÇÒ ¼ö ÀÖ´Â °ø°£ ÇÊ¿ä
-    // Å°·Î ¹İÈ¯ÇØÁÙ °ÔÀÓ¿ÀºêÁ§Æ® Å¸ÀÔÀ» Àû°í, º§·ù°ªÀº ¸®½ºÆ®·Î ÇÏ¿©¼­ Å¥¿¡ »ç¿ëÇÒ ¼ö ÀÖ´Â °ÔÀÓ¿ÀºêÁ§Æ®°¡ ÀÖÀ¸¸é ¹İÈ¯
-    // ¾øÀ¸¸é »õ·Î »ı¼ºÈÄ Å¥¿¡ ³Ö¾îÁØµÚ, ¹İÈ¯
+    // ê²Œì„ì˜¤ë¸Œì íŠ¸ë¥¼ ì €ì¥í•  ìˆ˜ ìˆê²Œ ì €ì¥í•  ìˆ˜ ìˆëŠ” ê³µê°„ í•„ìš”
+    // í‚¤ë¡œ ë°˜í™˜í•´ì¤„ ê²Œì„ì˜¤ë¸Œì íŠ¸ íƒ€ì…ì„ ì ê³ , ë²¨ë¥˜ê°’ì€ ë¦¬ìŠ¤íŠ¸ë¡œ í•˜ì—¬ì„œ íì— ì‚¬ìš©í•  ìˆ˜ ìˆëŠ” ê²Œì„ì˜¤ë¸Œì íŠ¸ê°€ ìˆìœ¼ë©´ ë°˜í™˜
+    // ì—†ìœ¼ë©´ ìƒˆë¡œ ìƒì„±í›„ íì— ë„£ì–´ì¤€ë’¤, ë°˜í™˜
 
-    // ¾ÀÀ» ³Ñ¾î°¡¸é ¸ğµÎ ÃÊ±âÈ­ << ³ªÁß¿¡ ¸¸µé¾î ºÁ¾ß°Ú´Ù
+    // ì”¬ì„ ë„˜ì–´ê°€ë©´ ëª¨ë‘ ì´ˆê¸°í™” << ë‚˜ì¤‘ì— ë§Œë“¤ì–´ ë´ì•¼ê² ë‹¤
 
     private Dictionary<string, Queue<GameObject>> objectPool = new();
 
@@ -26,12 +26,12 @@ public class ObjectPoolManager : Singleton<ObjectPoolManager>
     /// <typeparam name="T"></typeparam>
     /// <param name="key"></param>
     /// <returns></returns>
-    public GameObject GetObject<T>(string key) where T : FactoryBase
+    public GameObject GetObject<T>() where T : FactoryBase
     {
         GameObject poolGo = null;
-        if(objectPool.TryGetValue(key, out var queue))
+        if(objectPool.TryGetValue(typeof(T).Name, out var queue))
         {
-            // °ÔÀÓ¿ÀºêÁ§Æ®°¡ µé¾î ÀÖÀ»¶§
+            // ê²Œì„ì˜¤ë¸Œì íŠ¸ê°€ ë“¤ì–´ ìˆì„ë•Œ
             if(queue.Count > 0)
             {
                 GameObject dequeueGo = queue.Dequeue();
@@ -39,10 +39,10 @@ public class ObjectPoolManager : Singleton<ObjectPoolManager>
             }
         }
 
-        // »ı¼º ¹× Ãß°¡
+        // ìƒì„± ë° ì¶”ê°€
         GameObject obj = factory.path[typeof(T).Name].CreateObject(poolGo);
 
-        // ÇØ´çµÇ´Â Å°°¡ ¾øÀ¸¸é »õ·Î »ı¼º
+        // í•´ë‹¹ë˜ëŠ” í‚¤ê°€ ì—†ìœ¼ë©´ ìƒˆë¡œ ìƒì„±
         if (!objectPool.ContainsKey(typeof(T).Name))
             objectPool.Add(typeof(T).Name, new Queue<GameObject>());
 
@@ -51,7 +51,7 @@ public class ObjectPoolManager : Singleton<ObjectPoolManager>
     }
 
     /// <summary>
-    /// T : FactoryType, GameObject : FactoryTypeÀ¸·Î ¸¸µé¾îÁø obj
+    /// T : FactoryType, GameObject : FactoryTypeìœ¼ë¡œ ë§Œë“¤ì–´ì§„ obj
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <param name="key"></param>

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -42,9 +42,9 @@ public class UISlot : MonoBehaviour
         ActiveSlot(IsActive);
         itemIcon.color = alphaZero;
 
-        // ¸¸¾à ¾ÆÀÌÅÛÀÌ ¼ÒºñÇü ¾ÆÀÌÅÛÀÌ¸é
-        // ItemData¿¡ TypeÀ» ¼³Á¤ÇØÁà¼­
-        // ¾î¶² Å¸ÀÔÀÎÁö µû¶ó¼­ Ã¼Å©ÇØÁÖ°í ±× »óÈ²¿¡ ¸Â´Â ¸Ş¼­µå È£Ãâ
+        // ë§Œì•½ ì•„ì´í…œì´ ì†Œë¹„í˜• ì•„ì´í…œì´ë©´
+        // ItemDataì— Typeì„ ì„¤ì •í•´ì¤˜ì„œ
+        // ì–´ë–¤ íƒ€ì…ì¸ì§€ ë”°ë¼ì„œ ì²´í¬í•´ì£¼ê³  ê·¸ ìƒí™©ì— ë§ëŠ” ë©”ì„œë“œ í˜¸ì¶œ
         GetComponent<Button>().onClick.AddListener(OnSlotClick);
     }
 

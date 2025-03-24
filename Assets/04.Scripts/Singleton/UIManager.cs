@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using UnityEngine.Rendering;
 
 public class UIManager : Singleton<UIManager>
 {
-    // »õ·Î ¸¸µé¾îÁø °´Ã¼¸¦ ÀúÀåÇÒ ¼ö ÀÖ´Â µñ¼Å³Ê¸®
+    // ìƒˆë¡œ ë§Œë“¤ì–´ì§„ ê°ì²´ë¥¼ ì €ì¥í•  ìˆ˜ ìˆëŠ” ë”•ì…”ë„ˆë¦¬
     private Dictionary<string, UIPopupBase> popupDict = new();
 
     public T GetPopup<T>() where T : UIPopupBase
@@ -17,8 +17,8 @@ public class UIManager : Singleton<UIManager>
             return value as T;
         }
 
-        // ¿øº» ÇÁ¸®ÆéÀ» °¡Á®¿Í¾ßÇÑ´Ù.
-        // »õ·Î »ı¼ºÇÏ°í, µñ¼Å³Ê¸®¿¡ ÀúÀå
+        // ì›ë³¸ í”„ë¦¬í©ì„ ê°€ì ¸ì™€ì•¼í•œë‹¤.
+        // ìƒˆë¡œ ìƒì„±í•˜ê³ , ë”•ì…”ë„ˆë¦¬ì— ì €ì¥
 
         string name = typeof(T).Name;
         string path = $"Popup\\{name}";

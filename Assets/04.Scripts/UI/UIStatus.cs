@@ -1,11 +1,11 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 
-// ±×³É ÅØ½ºÆ® Ã£±â ¿ëµµ
+// ê·¸ëƒ¥ í…ìŠ¤íŠ¸ ì°¾ê¸° ìš©ë„
 public enum ABILITY
 {
     ATTACK,
@@ -38,7 +38,7 @@ public class UIStatus : UIPopupBase
     {
         if(_plus != null)
         {
-            // ÇÃ·¹ÀÌ¾î¸¦ ÂüÁ¶ÇØ¼­ ±âº» ¼öÄ¡¿Í ÇÃ·¯½º ¼öÄ¡¸¦ Àû¿ë
+            // í”Œë ˆì´ì–´ë¥¼ ì°¸ì¡°í•´ì„œ ê¸°ë³¸ ìˆ˜ì¹˜ì™€ í”ŒëŸ¬ìŠ¤ ìˆ˜ì¹˜ë¥¼ ì ìš©
             meshTexts[(int)ABILITY.ATTACK].text = $"Attack : {_default.Attack} (+{_plus.Attack})";
             meshTexts[(int)ABILITY.DEFENCE].text = $"Defence : {_default.Defence} (+{_plus.Defence})";
             meshTexts[(int)ABILITY.HEART].text = $"Heart : {_default.Heart} (+{_plus.Heart})";
@@ -46,7 +46,7 @@ public class UIStatus : UIPopupBase
         }
         else
         {
-            // ÇÃ·¹ÀÌ¾î¸¦ ÂüÁ¶ÇØ¼­ ±âº» ¼öÄ¡¿Í ÇÃ·¯½º ¼öÄ¡¸¦ Àû¿ë
+            // í”Œë ˆì´ì–´ë¥¼ ì°¸ì¡°í•´ì„œ ê¸°ë³¸ ìˆ˜ì¹˜ì™€ í”ŒëŸ¬ìŠ¤ ìˆ˜ì¹˜ë¥¼ ì ìš©
             meshTexts[(int)ABILITY.ATTACK].text = $"Attack : {_default.Attack} (+0)";
             meshTexts[(int)ABILITY.DEFENCE].text = $"Defence : {_default.Defence} (+0)";
             meshTexts[(int)ABILITY.HEART].text = $"Heart : {_default.Heart} (+0)";

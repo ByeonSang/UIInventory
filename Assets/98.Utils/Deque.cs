@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
@@ -12,7 +12,7 @@ public class Deque<T>
     public int Capacity { get; private set; } = 0;
 
     /// <summary>
-    /// ¹Ì¸® Å©±â Á¶Àı
+    /// ë¯¸ë¦¬ í¬ê¸° ì¡°ì ˆ
     /// </summary>
     /// <param name="Capacity"></param>
     public Deque(int capacity)
@@ -103,7 +103,7 @@ public class Deque<T>
         return true;
     }
 
-    // ¿¹¿Ü»çÇ× ¸¸µé±â
+    // ì˜ˆì™¸ì‚¬í•­ ë§Œë“¤ê¸°
     public bool Is_Empty()
     {
         return front == rear;

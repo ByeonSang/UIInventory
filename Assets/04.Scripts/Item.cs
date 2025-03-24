@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
@@ -19,7 +19,7 @@ public class Item : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    // ¿ÀºêÁ§Æ® Ç® »ç¿ëÇÏ´Â ¿ÀºêÁ§Àº ½ÃÀÛÀ» OnEnable·Î ¼³Á¤
+    // ì˜¤ë¸Œì íŠ¸ í’€ ì‚¬ìš©í•˜ëŠ” ì˜¤ë¸Œì ì€ ì‹œì‘ì„ OnEnableë¡œ ì„¤ì •
     private void OnEnable()
     {
         transform.name = $"Item_{itemData.name}";

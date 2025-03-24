@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -14,7 +14,7 @@ public class EquipState
     }
 
 
-    // ¾îÂ÷ÇÇ µ¤¾î ¾º¿ì´Ï±ñ ±×³É Plus´Â ±× ¹«±â¸¦ ÂüÁ¶¸¸ ÇÏµµ·Ï
+    // ì–´ì°¨í”¼ ë®ì–´ ì”Œìš°ë‹ˆê¹ ê·¸ëƒ¥ PlusëŠ” ê·¸ ë¬´ê¸°ë¥¼ ì°¸ì¡°ë§Œ í•˜ë„ë¡
     public void Equip<T>(EquipData data) where T : EquipData
     {
         T equipment = null;
@@ -35,30 +35,30 @@ public class EquipState
         return null;
     }
 
-    // Àåºñ ½ºÅÈ °¡Á®¿À±â
+    // ì¥ë¹„ ìŠ¤íƒ¯ ê°€ì ¸ì˜¤ê¸°
     public Status GetEquipmentStatus()
     {
-        // °øÅë
+        // ê³µí†µ
         float heart = 0f;
         float critical = 0f;
 
-        // ¹«±â
+        // ë¬´ê¸°
         WeaponData weapon;
         float attack = 0f;
         if(weapon = GetEquip<WeaponData>())
         {
-            // weapon°ªÀÌ ÀÖÀ¸¸é
+            // weaponê°’ì´ ìˆìœ¼ë©´
             attack = weapon.Attack;
             heart += weapon.Heart;
             critical += weapon.Critical;
         }
 
-        // ¹æ¾î±¸
+        // ë°©ì–´êµ¬
         ArmorData armor;
         float defence = 0f;
         if (armor = GetEquip<ArmorData>())
         {
-            // weapon°ªÀÌ ÀÖÀ¸¸é
+            // weaponê°’ì´ ìˆìœ¼ë©´
             defence = armor.Defence;
             heart += armor.Heart;
             critical += armor.Critical;
@@ -67,6 +67,6 @@ public class EquipState
         return new Status(attack, defence, heart, critical);
     }
 
-    // ¹æ¾î±¸¸¦ ÀåÂøÇß´ø ½½·ÔÀ» ¹İÈ¯ÇØ¾ßµÇ´Âµ¥ ¾îÄÉÇÏ´©
-    // UIInventory¿¡¼­ ÀÌÀü ½½·ÔÀ» ÀúÀå ¤·¤» ÀÌ°Å´Ù
+    // ë°©ì–´êµ¬ë¥¼ ì¥ì°©í–ˆë˜ ìŠ¬ë¡¯ì„ ë°˜í™˜í•´ì•¼ë˜ëŠ”ë° ì–´ì¼€í•˜ëˆ„
+    // UIInventoryì—ì„œ ì´ì „ ìŠ¬ë¡¯ì„ ì €ì¥ ã…‡ã…‹ ì´ê±°ë‹¤
 }

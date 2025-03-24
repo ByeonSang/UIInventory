@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -41,7 +41,7 @@ public class Level
         int levelUpCount = (int)((CurrentExp + plusExp) / 100f);
         float Calculate = (CurrentExp + plusExp) % 100f;
 
-        // ·¹º§¾÷ÇÏ¸é µğÆúÆ® ½ºÅÈÁõ°¡
+        // ë ˆë²¨ì—…í•˜ë©´ ë””í´íŠ¸ ìŠ¤íƒ¯ì¦ê°€
         if(levelUpCount > 0)
         {
             defaultStatus.Attack += levelUpCount;
@@ -60,7 +60,7 @@ public class Level
 
 public class Player : MonoBehaviour
 {
-    // UI ¾÷µ¥ÀÌÆ® ¾×¼Ç
+    // UI ì—…ë°ì´íŠ¸ ì•¡ì…˜
     public Action<Status, Status> StatusUpdate;
     public Action<Level> LevelUpdate;
     public Action<int> CoinUpdate;
@@ -68,7 +68,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float moveSpeed;
     private Vector2 direction;
 
-    // °£´ÜÇÑ ±¸Á¶ -------------------------------
+    // ê°„ë‹¨í•œ êµ¬ì¡° -------------------------------
     public Status DefaultStatus { get; set; }
 
 
@@ -112,7 +112,7 @@ public class Player : MonoBehaviour
 
         GameManager.Instance.PlayerController = this;
         
-        // ÇÃ·¹ÀÌ¾î°¡ ÇÊ¿äÇÑ ÆË¾÷Ã¢ ¼ÂÆÃ
+        // í”Œë ˆì´ì–´ê°€ í•„ìš”í•œ íŒì—…ì°½ ì…‹íŒ…
         UIManager.Instance.GetPopup<UIStatus>();
         UIManager.Instance.GetPopup<UIInventory>();
     }
@@ -130,17 +130,17 @@ public class Player : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, moveToward, Time.deltaTime);
 
 
-        // Test Item¼ÒÈ¯
+        // Test Itemì†Œí™˜
         if(Input.GetKeyDown(KeyCode.F))
         {
-            GameObject item = ObjectPoolManager.Instance.GetObject<ItemFactory>(typeof(ItemFactory).Name);
+            GameObject item = ObjectPoolManager.Instance.GetObject<ItemFactory>();
             item.transform.position = new Vector3(2f, 0f);
         }
 
-        // Test °æÇèÄ¡ ¹Ş¾Æ¸Ô±â
+        // Test ê²½í—˜ì¹˜ ë°›ì•„ë¨¹ê¸°
         if(Input.GetKeyDown(KeyCode.G))
         {
-            // ·¹º§¾÷½Ã ½ºÅÈ ´Ù½Ã µå·Î¿ì
+            // ë ˆë²¨ì—…ì‹œ ìŠ¤íƒ¯ ë‹¤ì‹œ ë“œë¡œìš°
             if (PlayerLevel.AddExp(20f, DefaultStatus))
             {
                 Coin += 1000;
@@ -156,7 +156,7 @@ public class Player : MonoBehaviour
     {
         Status equipStatus = PlayerEquipState.GetEquipmentStatus();
 
-        // UI ¾÷µ¥ÀÌÆ®
+        // UI ì—…ë°ì´íŠ¸
         StatusUpdate?.Invoke(DefaultStatus, equipStatus);
     }
 }

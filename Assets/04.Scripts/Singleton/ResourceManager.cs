@@ -1,11 +1,11 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ResourceManager : Singleton<ResourceManager>
 {
-    // ¿øº» ÇÁ¸®ÆéÀ» °¡Áö°í ÀÖ´Â µñ¼Å³Ê¸®
+    // ì›ë³¸ í”„ë¦¬í©ì„ ê°€ì§€ê³  ìˆëŠ” ë”•ì…”ë„ˆë¦¬
     private Dictionary<string, UnityEngine.Object> original = new();
 
     public T LoadResource<T>(string key, string path) where T : UnityEngine.Object
@@ -15,7 +15,7 @@ public class ResourceManager : Singleton<ResourceManager>
             return value as T;
         }
 
-        // »õ·Î ºÒ·¯¿Í¾ßµË´Ï´Ù.
+        // ìƒˆë¡œ ë¶ˆëŸ¬ì™€ì•¼ë©ë‹ˆë‹¤.
         var obj = Resources.Load(path);
 
         if(obj is T)

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,12 +6,9 @@ using UnityEngine.SceneManagement;
 public class StageManager : Singleton<StageManager>
 {
 
-    
-
-
     public void ChanageScene(int index)
     {
-        // ¿ÀºêÁ§Æ® Ç®, ÆË¾÷, ÆÑÅä¸® µñ¼Å³Ê¸®µé Å¬¸®¾î
+        // ì˜¤ë¸Œì íŠ¸ í’€, íŒì—…, íŒ©í† ë¦¬ ë”•ì…”ë„ˆë¦¬ë“¤ í´ë¦¬ì–´
         // TODO::
 
         GameManager.Instance.PlayerController = null;

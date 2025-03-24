@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -23,7 +23,7 @@ public class PrevEquipSlot
             return result;
         }
 
-        // Âø¿ëÁßÀÎ°Ô ¾øÀ¸¸é
+        // ì°©ìš©ì¤‘ì¸ê²Œ ì—†ìœ¼ë©´
         return null;
     }
 
@@ -110,15 +110,15 @@ public class UIInventory : UIPopupBase
 
 
 
-        // ÀÌÀü ½½·Ô°ú ³»°¡ ÇöÀç ¼±ÅÃÇÑ ½½·ÔÀÌ °°À¸¸é Àåºñ ÇØÁ¦
-        // ²Ä¼öÁö¸¸ ¾ÆÀÌÅÛ À§Ä¡ º¯°æÀ» ÇÏÁö ¾ÊÀ¸´Ï±ñ ±×³É ÀÌ´ë·Î...
-        // ½ºÅ©¸³ÅÍºí ÇÑ°³¸¸ ·ÎµåÇÏ´Â »óÅÂ¶ó¼­ ¸ðµç µ¥ÀÌÅÍµéÀÌ ¶È°°Àº Ãë±ÞÀ» ÇÏ¹Ç·Î
-        // ÇØ°á ¹æ¹ýÀ¸·Î´Â ½ºÅ©¸³ÅÍºíÀ» °¢°¢ »ý¼ºÇÏ´Â°Í¹Û¿¡ »ý°¢ÀÌ ³ªÁö ¾Ê´Â´Ù.
+        // ì´ì „ ìŠ¬ë¡¯ê³¼ ë‚´ê°€ í˜„ìž¬ ì„ íƒí•œ ìŠ¬ë¡¯ì´ ê°™ìœ¼ë©´ ìž¥ë¹„ í•´ì œ
+        // ê¼¼ìˆ˜ì§€ë§Œ ì•„ì´í…œ ìœ„ì¹˜ ë³€ê²½ì„ í•˜ì§€ ì•Šìœ¼ë‹ˆê¹ ê·¸ëƒ¥ ì´ëŒ€ë¡œ...
+        // ìŠ¤í¬ë¦½í„°ë¸” í•œê°œë§Œ ë¡œë“œí•˜ëŠ” ìƒíƒœë¼ì„œ ëª¨ë“  ë°ì´í„°ë“¤ì´ ë˜‘ê°™ì€ ì·¨ê¸‰ì„ í•˜ë¯€ë¡œ
+        // í•´ê²° ë°©ë²•ìœ¼ë¡œëŠ” ìŠ¤í¬ë¦½í„°ë¸”ì„ ê°ê° ìƒì„±í•˜ëŠ”ê²ƒë°–ì— ìƒê°ì´ ë‚˜ì§€ ì•ŠëŠ”ë‹¤.
 
-        // ´Ù¸¥ ¹æ¹ýÀ¸·Î
-        // ÀåÂø½½·Ô Å¬·¡½º¸¦ ÇÏ³ª ´õÆÄ¼­ ±× ½½·ÔÀ¸·Î Àåºñ¸¦ ÀåÂøÇß´ÂÁö ¿©ºÎ¸¦ ÆÄ¾ÇÇß½À´Ï´Ù.
+        // ë‹¤ë¥¸ ë°©ë²•ìœ¼ë¡œ
+        // ìž¥ì°©ìŠ¬ë¡¯ í´ëž˜ìŠ¤ë¥¼ í•˜ë‚˜ ë”íŒŒì„œ ê·¸ ìŠ¬ë¡¯ìœ¼ë¡œ ìž¥ë¹„ë¥¼ ìž¥ì°©í–ˆëŠ”ì§€ ì—¬ë¶€ë¥¼ íŒŒì•…í–ˆìŠµë‹ˆë‹¤.
 
-        // ÇöÀç Âø¿ëÁßÀÎ ¾ÆÀÌÅÛ°ú ÇöÀç ¾ÆÀÌÅÛ ºñ±³
+        // í˜„ìž¬ ì°©ìš©ì¤‘ì¸ ì•„ì´í…œê³¼ í˜„ìž¬ ì•„ì´í…œ ë¹„êµ
         if(prevSelectedSlot.GetPrevSlot<T>()  == currentSlot)
         {
             curEquip.Equip<T>(null);

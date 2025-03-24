@@ -1,22 +1,22 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemFactory : FactoryBase
 {
-    // µ¥ÀÌÅÍ ÇÁ¸®Æé
+    // ë°ì´í„° í”„ë¦¬í©
     private List<EquipData> dataList = new();
 
     private const string path = "Scriptable\\Item";
-    // ¾ÆÀÌÅÛ »ı¼º¿¡ ÇÊ¿äÇÑ°Í
-    // ¾ÆÀÌÅÛ µ¥ÀÌÅÍ, ¾ÆÀÌÅÛ ÇÁ¸®Æé ( ¿øº» °´Ã¼ )
+    // ì•„ì´í…œ ìƒì„±ì— í•„ìš”í•œê²ƒ
+    // ì•„ì´í…œ ë°ì´í„°, ì•„ì´í…œ í”„ë¦¬í© ( ì›ë³¸ ê°ì²´ )
 
-    // ¸®¼Ò½º ¸Å´ÏÀú¿¡¼­ ÇÁ¸®ÆéÀ» °¡Á®¿À°í
-    // ±× ÇÁ¸®Æé ¾È¿¡ ÀÖ´Â Item ½ºÅ©¸³Æ®¿¡ Á¢±Ù
-    // Á¢±Ù ÈÄ, ItemData ±³Ã¼
+    // ë¦¬ì†ŒìŠ¤ ë§¤ë‹ˆì €ì—ì„œ í”„ë¦¬í©ì„ ê°€ì ¸ì˜¤ê³ 
+    // ê·¸ í”„ë¦¬í© ì•ˆì— ìˆëŠ” Item ìŠ¤í¬ë¦½íŠ¸ì— ì ‘ê·¼
+    // ì ‘ê·¼ í›„, ItemData êµì²´
 
-    // ¾ÆÀÌÅÛ µ¥ÀÌÅÍ°üÇÑ °ÍµéÀº ¾î¿şÀÌÅ©¿¡¼­ µ¥ÀÌÅÍ ·Îµå
+    // ì•„ì´í…œ ë°ì´í„°ê´€í•œ ê²ƒë“¤ì€ ì–´ì›¨ì´í¬ì—ì„œ ë°ì´í„° ë¡œë“œ
     private void Awake()
     {
         dataList.Add(ResourceManager.Instance.LoadResource<WeaponData>("Hammer", $"{path}\\Hammer"));
@@ -30,7 +30,7 @@ public class ItemFactory : FactoryBase
         FactoryManager.Instance.path[typeof(ItemFactory).Name] = this;
     }
 
-    // ¸Å°³º¯¼ö·Î ¹Ş´Â ¿ÀºêÁ§Æ®°¡ ÀÖÀ¸¸é ±×°É ¾º¿ì±â
+    // ë§¤ê°œë³€ìˆ˜ë¡œ ë°›ëŠ” ì˜¤ë¸Œì íŠ¸ê°€ ìˆìœ¼ë©´ ê·¸ê±¸ ì”Œìš°ê¸°
     public override GameObject CreateObject(GameObject obj = null)
     {
         EquipData newData;
