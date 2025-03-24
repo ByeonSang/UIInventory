@@ -65,4 +65,9 @@ public class ObjectPoolManager : Singleton<ObjectPoolManager>
         objectPool[typeof(T).Name].Enqueue(obj);
     }
 
+    public void ClearObjectPool()
+    {
+        objectPool.Clear();
+    }
+
 }

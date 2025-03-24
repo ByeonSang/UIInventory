@@ -54,6 +54,7 @@ public class Player : MonoBehaviour
 
     // ----------------------------------
 
+
     private void Awake()
     {
         Inventory = new();
@@ -63,8 +64,8 @@ public class Player : MonoBehaviour
         GameManager.Instance.PlayerController = this;
         
         // 플레이어가 필요한 팝업창 셋팅
-        UIManager.Instance.ShowPopup<UIStatus>();
-        UIManager.Instance.ShowPopup<UIInventory>();
+        UIManager.Instance.GetPopup<UIStatus>();
+        UIManager.Instance.GetPopup<UIInventory>();
     }
 
     private IEnumerator Start()

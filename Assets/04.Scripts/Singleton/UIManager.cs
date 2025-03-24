@@ -8,9 +8,9 @@ using UnityEngine.Rendering;
 public class UIManager : Singleton<UIManager>
 {
     // 새로 만들어진 객체를 저장할 수 있는 딕셔너리
-    Dictionary<string, UIPopupBase> popupDict = new();
+    private Dictionary<string, UIPopupBase> popupDict = new();
 
-    public T ShowPopup<T>() where T : UIPopupBase
+    public T GetPopup<T>() where T : UIPopupBase
     {
         if(popupDict.TryGetValue(typeof(T).Name, out var value))
         {
@@ -37,5 +37,10 @@ public class UIManager : Singleton<UIManager>
             Debug.Log($"didn't make {typeof(T).Name} object");
             return null;
         }
+    }
+
+    public void ClearPopup()
+    {
+        popupDict.Clear();
     }
 }

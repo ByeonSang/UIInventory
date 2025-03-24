@@ -35,7 +35,7 @@ public class Item : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            if(UIManager.Instance.ShowPopup<UIInventory>().AddItem(itemData))
+            if(UIManager.Instance.GetPopup<UIInventory>().AddItem(itemData))
             {
                 GameManager.Instance.PlayerController.Inventory.Add(itemData);
                 ObjectPoolManager.Instance.ReturnObject<ItemFactory>(this.gameObject);

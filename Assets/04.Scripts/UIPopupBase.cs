@@ -10,6 +10,11 @@ public class UIPopupBase : MonoBehaviour
     {
         isEnable = !isEnable;
         gameObject.SetActive(isEnable);
+
+        if(isEnable)
+        {
+            
+        }
     }
 
     public void SetActive(bool trigger)

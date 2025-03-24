@@ -14,9 +14,9 @@ public class UIMainMenu : MonoBehaviour
     {
         uiManager = UIManager.Instance;
 
-        StatusBtn.onClick.AddListener(() => uiManager.ShowPopup<UIStatus>().SwitchOn());
-        InventoryBtn.onClick.AddListener(() => uiManager.ShowPopup<UIInventory>().SwitchOn());
-        uiManager.ShowPopup<UIInventory>().SetActive(false);
-        uiManager.ShowPopup<UIStatus>().SetActive(false);
+        StatusBtn.onClick.AddListener(() => uiManager.GetPopup<UIStatus>().SwitchOn());
+        InventoryBtn.onClick.AddListener(() => uiManager.GetPopup<UIInventory>().SwitchOn());
+        uiManager.GetPopup<UIInventory>().SetActive(false);
+        uiManager.GetPopup<UIStatus>().SetActive(false);
     }
 }
