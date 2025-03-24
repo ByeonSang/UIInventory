@@ -18,15 +18,6 @@ public class Status
         Heart = heart;
         Critical = critical;
     }
-
-    // new 새로 할당하는 자체가 싫어서 그냥 Set으로 만들었음
-    public void Set(float attack, float defence, float heart, float critical)
-    {
-        Attack = attack;
-        Defence = defence;
-        Heart = heart;
-        Critical = critical;
-    }
 }
 
 
@@ -40,17 +31,16 @@ public class Player : MonoBehaviour
 
     // 간단한 구조 -------------------------------
     public Status DefaultStatus { get; set; }
-    public Status PlusStatus { get; set; }
 
 
     // Player Inventory
-    public List<ItemData> Inventory { get; set; }
+    public List<EquipData> Inventory { get; set; }
 
     // --------------------------------------------
 
     // Player Equipmanet ----------------
 
-    public ItemData CurrentWeapon { get; set; }
+    public EquipState equipState = new();
 
     // ----------------------------------
 
@@ -59,8 +49,6 @@ public class Player : MonoBehaviour
     {
         Inventory = new();
         DefaultStatus = new(2f, 2f, 2f, 2f);
-        PlusStatus = new(0f, 0f, 0f, 0f);
-
         GameManager.Instance.PlayerController = this;
         
         // 플레이어가 필요한 팝업창 셋팅
@@ -73,7 +61,7 @@ public class Player : MonoBehaviour
         yield return (new WaitUntil(() => StatusUpdate != null));
 
         // 초기화
-        StatusUpdate?.Invoke(DefaultStatus, PlusStatus);
+        StatusUpdate?.Invoke(DefaultStatus, equipState.GetEquipmentStatus());
     }
 
     private void Update()
@@ -96,14 +84,11 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void SetStatus(ItemData data, bool unEquip)
+    public void SetStatus()
     {
-        if(unEquip)
-            PlusStatus.Set(PlusStatus.Attack - data.Attack, PlusStatus.Defence - data.Defence, PlusStatus.Heart - data.Heart, PlusStatus.Critical - data.Critical);        
-        else        
-            PlusStatus.Set(PlusStatus.Attack + data.Attack, PlusStatus.Defence + data.Defence, PlusStatus.Heart + data.Heart, PlusStatus.Critical + data.Critical);
+        Status equipStatus = equipState.GetEquipmentStatus();
 
         // UI 업데이트
-        StatusUpdate?.Invoke(DefaultStatus, PlusStatus);
+        StatusUpdate?.Invoke(DefaultStatus, equipStatus);
     }
 }

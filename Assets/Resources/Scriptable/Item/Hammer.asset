@@ -9,12 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 229af9563c5c77746b11897d6d378c21, type: 3}
+  m_Script: {fileID: 11500000, guid: 21e91f82b6c76bb47a9cba0760376a64, type: 3}
   m_Name: Hammer
   m_EditorClassIdentifier: 
-  ItemName: WoodSword
+  ItemName: Hammer
   Image: {fileID: 21300000, guid: 3c190b283d43840bbb215fe913ab29db, type: 3}
-  Attack: 4
-  Defence: 1
   Heart: 2
-  Critical: 10
+  Critical: 2
+  Attack: 4

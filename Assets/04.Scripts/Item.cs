@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Tilemaps;
@@ -7,7 +8,8 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Item : MonoBehaviour
 {
-    public ItemData itemData;
+    public Type type;
+    public EquipData itemData;
 
     private SpriteRenderer spr;
     private BoxCollider2D boxCol;

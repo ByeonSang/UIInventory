@@ -5,5 +5,9 @@ using UnityEngine;
 
 public static class Utils
 {
-
+    public enum EquipType
+    {
+        Weapon,
+        Armor,
+    }
 }

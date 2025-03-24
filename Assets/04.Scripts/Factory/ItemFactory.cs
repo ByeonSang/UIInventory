@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine;
 public class ItemFactory : FactoryBase
 {
     // 데이터 프리펩
-    private List<ItemData> dataList = new();
+    private List<EquipData> dataList = new();
 
     private const string path = "Scriptable\\Item";
     // 아이템 생성에 필요한것
@@ -18,10 +19,10 @@ public class ItemFactory : FactoryBase
     // 아이템 데이터관한 것들은 어웨이크에서 데이터 로드
     private void Awake()
     {
-        dataList.Add(ResourceManager.Instance.LoadResource<ItemData>("Hammer", $"{path}\\Hammer"));
-        dataList.Add(ResourceManager.Instance.LoadResource<ItemData>("RockArmor", $"{path}\\RockArmor"));
-        dataList.Add(ResourceManager.Instance.LoadResource<ItemData>("WoodArmor", $"{path}\\WoodArmor"));
-        dataList.Add(ResourceManager.Instance.LoadResource<ItemData>("WoodSword", $"{path}\\WoodSword"));
+        dataList.Add(ResourceManager.Instance.LoadResource<WeaponData>("Hammer", $"{path}\\Hammer"));
+        dataList.Add(ResourceManager.Instance.LoadResource<WeaponData>("WoodSword", $"{path}\\WoodSword"));
+        dataList.Add(ResourceManager.Instance.LoadResource<ArmorData>("RockArmor", $"{path}\\RockArmor"));
+        dataList.Add(ResourceManager.Instance.LoadResource<ArmorData>("WoodArmor", $"{path}\\WoodArmor"));
     }
 
     private void Start()
@@ -32,8 +33,9 @@ public class ItemFactory : FactoryBase
     // 매개변수로 받는 오브젝트가 있으면 그걸 씌우기
     public override GameObject CreateObject(GameObject obj = null)
     {
-        ItemData newData;
-        if ((newData = GetRandomItemData()) == null)
+        EquipData newData;
+        Type type;
+        if ((newData = GetRandomItemData(out type)) == null)
             return null;
 
 
@@ -45,15 +47,17 @@ public class ItemFactory : FactoryBase
         return obj;
     }
 
-    private ItemData GetRandomItemData()
+    private EquipData GetRandomItemData(out Type type)
     {
         if (dataList.Count > 0)
         {
-            int rand = Random.Range(0, dataList.Count);
+            int rand = UnityEngine.Random.Range(0, dataList.Count);
 
+            type = dataList[rand].GetType();
             return dataList[rand];
         }
 
+        type = null;
         return null;
     }
 }

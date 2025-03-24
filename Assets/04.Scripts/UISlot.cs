@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +16,7 @@ public class UISlot : MonoBehaviour
     private Color dontAcitveColor = Color.gray;
     private Color AcitveColor = Color.white;
 
-    public ItemData itemData;
+    public EquipData itemData;
     public bool IsActive;
 
     private Image img;
@@ -70,6 +71,16 @@ public class UISlot : MonoBehaviour
     public void OnSlotClick()
     {
         if(itemData != null)
-            inventory.Equip(this);
+        {
+            switch (itemData.type)
+            {
+                case Utils.EquipType.Weapon:
+                    inventory.Equip<WeaponData>(this);
+                    break;
+                case Utils.EquipType.Armor:
+                    inventory.Equip<ArmorData>(this);
+                    break;
+            }
+        }
     }
 }
