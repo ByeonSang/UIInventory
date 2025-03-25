@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="FactoryBase">
+    <Position X="21.75" Y="13.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAABAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\04.Scripts\Factory\FactoryBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ItemFactory">
+    <Position X="21.75" Y="16" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACACAAAAAAACAAAAAAAAAgAAAAAAgAAAAEA=</HashCode>
+      <FileName>Assets\04.Scripts\Factory\ItemFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Item" Collapsed="true">
+    <Position X="40.5" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAEAAAAACAAAAgAAACEA=</HashCode>
+      <FileName>Assets\04.Scripts\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EquipState" Collapsed="true">
+    <Position X="38.75" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAgAAAAAAAABAA=</HashCode>
+      <FileName>Assets\04.Scripts\Player\EquipState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Status" Collapsed="true">
+    <Position X="40.5" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAgAAACA=</HashCode>
+      <FileName>Assets\04.Scripts\Player\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Level" Collapsed="true">
+    <Position X="42.25" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Assets\04.Scripts\Player\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player" Collapsed="true">
+    <Position X="44" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAEEAAAIACABAAAFAAAQAQAAAAAAACAAgEAAEA=</HashCode>
+      <FileName>Assets\04.Scripts\Player\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArmorData">
+    <Position X="34.75" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Assets\04.Scripts\Scriptable\ArmorData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EquipData">
+    <Position X="33.25" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAMAAAAAAAAAAAAAAAAAAAAAAABABAAAAAAAAAAACA=</HashCode>
+      <FileName>Assets\04.Scripts\Scriptable\EquipData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WeaponData">
+    <Position X="32" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\04.Scripts\Scriptable\WeaponData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FactoryManager">
+    <Position X="14" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Assets\04.Scripts\Singleton\FactoryManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameManager">
+    <Position X="18.5" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\04.Scripts\Singleton\GameManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObjectPoolManager">
+    <Position X="7" Y="16.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgIAAAIABAAAAAAAAAAAAAAAAAAAAAAEI=</HashCode>
+      <FileName>Assets\04.Scripts\Singleton\ObjectPoolManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResourceManager">
+    <Position X="9.5" Y="16.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAABBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\04.Scripts\Singleton\ResourceManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Singleton&lt;T&gt;">
+    <Position X="12.75" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABABAAAAAAAAAAIAAEAAAAAAAAAAAAQAAAAAAAAEA=</HashCode>
+      <FileName>Assets\04.Scripts\Singleton\Singleton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StageManager">
+    <Position X="11.75" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\04.Scripts\Singleton\StageManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIManager">
+    <Position X="16.25" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAEAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Assets\04.Scripts\Singleton\UIManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UICoin" Collapsed="true">
+    <Position X="42.25" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAQAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\04.Scripts\UI\UICoin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrevEquipSlot" Collapsed="true">
+    <Position X="38.75" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Assets\04.Scripts\UI\UIInventory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIInventory">
+    <Position X="26" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAgAAAAAAQAAAAAAAAgAAAAAAgAAAAEAAAIFA=</HashCode>
+      <FileName>Assets\04.Scripts\UI\UIInventory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UILevel" Collapsed="true">
+    <Position X="44" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAACAAAAgAAAAAAAAAAAAIAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\04.Scripts\UI\UILevel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIMainMenu" Collapsed="true">
+    <Position X="38.75" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAgAAAQAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\04.Scripts\UI\UIMainMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIPopupBase">
+    <Position X="27.25" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAIABAAA=</HashCode>
+      <FileName>Assets\04.Scripts\UI\UIPopupBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UISlot" Collapsed="true">
+    <Position X="40.5" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAEAAAEAAAAAAIIBAABAACBBAAAAIAAEA=</HashCode>
+      <FileName>Assets\04.Scripts\UI\UISlot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIStatus">
+    <Position X="28.25" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAiAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\04.Scripts\UI\UIStatus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="ABILITY" Collapsed="true">
+    <Position X="38.75" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAIgAAAAEAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Assets\04.Scripts\UI\UIStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>
